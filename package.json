@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.13.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@intlify/bundle-utils": "^10.0.0",
+    "@intlify/unplugin-vue-i18n": "^6.0.0",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@latest",
+    "nuxt": "^3.14.159",
+    "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@intlify/unplugin-vue-i18n@6.0.0": "patches/@intlify__unplugin-vue-i18n@6.0.0.patch"
+    }
+  }
+}

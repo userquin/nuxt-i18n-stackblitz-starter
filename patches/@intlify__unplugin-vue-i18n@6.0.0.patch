@@ -1,0 +1,23 @@
+diff --git a/lib/index.mjs b/lib/index.mjs
+index 19a668d6512286f420039d712cb93345d4ab7b90..8020a89bf7fe69c7c80669530846a90a82bd803d 100644
+--- a/lib/index.mjs
++++ b/lib/index.mjs
+@@ -724,11 +724,13 @@ function directivePlugin({
+           if (vuePluginOptions == null) {
+             vuePluginOptions = getVuePluginOptions(vuePlugin);
+           }
+-          analyzeIdentifiers(
+-            getDescriptor(filename, code, vuePluginOptions),
+-            vuePluginOptions,
+-            translationIdentifiers
+-          );
++		  if (vuePluginOptions && vuePluginOptions.compiler) {
++			analyzeIdentifiers(
++			  getDescriptor(filename, code, vuePluginOptions),
++			  vuePluginOptions,
++			  translationIdentifiers
++			);
++		  }
+         }
+       }
+       return {
