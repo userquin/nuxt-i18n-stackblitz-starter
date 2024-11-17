@@ -13,7 +13,7 @@ importers:
   .:
     dependencies:
       vue:
-        specifier: ^3.5.12
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
     devDependencies:
       '@intlify/bundle-utils':
@@ -565,7 +565,7 @@ packages:
     engines: {node: '>= 16'}
 
   '@intlify/unplugin-vue-i18n@file:intlify-unplugin-vue-i18n-6.0.0.tgz':
-    resolution: {integrity: sha512-YR+UhQrLgEKZ7PudarImrsVNd7+fff0pxWSsK7guLwWZIWKMgYx2VpBm89/55BZT6uYLkItHBGtMzQZhRGyMlQ==, tarball: file:intlify-unplugin-vue-i18n-6.0.0.tgz}
+    resolution: {integrity: sha512-bgjOmhJy/wNSz+s1tPRqy8QsQCGfQirE7ZGTIM/+UziVLDNSnvNdAWDn86OQk3wpofs2MBBCyPVRGhM6NNwE5Q==, tarball: file:intlify-unplugin-vue-i18n-6.0.0.tgz}
     version: 6.0.0
     engines: {node: '>= 18'}
     peerDependencies:
