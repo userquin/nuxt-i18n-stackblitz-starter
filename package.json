@@ -14,16 +14,16 @@
   },
   "devDependencies": {
     "@intlify/bundle-utils": "^10.0.0",
-    "@intlify/unplugin-vue-i18n": "^6.0.0",
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@latest",
+    "@intlify/unplugin-vue-i18n": "file:intlify-unplugin-vue-i18n-6.0.0.tgz",
+    "@nuxtjs/i18n": "file:nuxtjs-i18n-9.0.0.tgz",
     "nuxt": "^3.14.159",
     "typescript": "^5.6.3",
     "vite": "^5.4.11"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "@intlify/unplugin-vue-i18n@6.0.0": "patches/@intlify__unplugin-vue-i18n@6.0.0.patch",
-      "vite@5.4.11": "patches/vite@5.4.11.patch"
+    "overrides": {
+      "@intlify/unplugin-vue-i18n": "file:intlify-unplugin-vue-i18n-6.0.0.tgz",
+      "@nuxtjs/i18n": "file:nuxtjs-i18n-9.0.0.tgz"
     }
   }
 }
