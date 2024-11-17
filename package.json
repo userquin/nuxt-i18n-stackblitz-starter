@@ -16,6 +16,7 @@
     "@intlify/bundle-utils": "^10.0.0",
     "@intlify/unplugin-vue-i18n": "file:intlify-unplugin-vue-i18n-6.0.0.tgz",
     "@nuxtjs/i18n": "file:nuxtjs-i18n-9.0.0.tgz",
+    "@vitejs/plugin-vue": "^5.2.0",
     "nuxt": "^3.14.159",
     "typescript": "^5.6.3",
     "vite": "^5.4.11"
@@ -24,6 +25,9 @@
     "overrides": {
       "@intlify/unplugin-vue-i18n": "file:intlify-unplugin-vue-i18n-6.0.0.tgz",
       "@nuxtjs/i18n": "file:nuxtjs-i18n-9.0.0.tgz"
+    },
+    "patchedDependencies": {
+      "@vitejs/plugin-vue@5.2.0": "patches/@vitejs__plugin-vue@5.2.0.patch"
     }
   }
 }
