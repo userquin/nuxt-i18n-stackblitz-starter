@@ -1,0 +1,14 @@
+diff --git a/dist/node/chunks/dep-CB_7IfJ-.js b/dist/node/chunks/dep-CB_7IfJ-.js
+index d4c6e0d5cd532d66136e3d4be52bed6d1f1e7b3c..55804a3d96e7d952a804a92eb7fbfe1c77cdda67 100644
+--- a/dist/node/chunks/dep-CB_7IfJ-.js
++++ b/dist/node/chunks/dep-CB_7IfJ-.js
+@@ -62851,6 +62851,9 @@ async function _createServer(inlineConfig = {}, options) {
+           error: e,
+           timestamp: true
+         });
++		console.log(`Pre-transform error trace: ${url}`, { options2 });
++		console.error(`Pre-transform error trace: ${url}`, e);
++		console.error(`Pre-transform error trace: ${url}`, new Error('UPPS'));
+       }
+     },
+     transformIndexHtml(url, html, originalUrl) {
