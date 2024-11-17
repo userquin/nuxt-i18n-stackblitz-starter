@@ -4,6 +4,8 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n'],
 
+  debug: true,
+
   i18n: {
     lazy: true,
     defaultLocale: 'en',

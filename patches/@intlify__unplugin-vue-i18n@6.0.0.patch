@@ -1,23 +1,53 @@
 diff --git a/lib/index.mjs b/lib/index.mjs
-index 19a668d6512286f420039d712cb93345d4ab7b90..8020a89bf7fe69c7c80669530846a90a82bd803d 100644
+index 19a668d6512286f420039d712cb93345d4ab7b90..c129f8031bf364b98b71e45328c726cbbdcee410 100644
 --- a/lib/index.mjs
 +++ b/lib/index.mjs
-@@ -724,11 +724,13 @@ function directivePlugin({
-           if (vuePluginOptions == null) {
-             vuePluginOptions = getVuePluginOptions(vuePlugin);
-           }
+@@ -715,26 +715,30 @@ function directivePlugin({
+         if (!checkVuePlugin(vuePlugin)) {
+           return;
+         }
+-      }
+-    },
+-    async transform(code, id) {
+-      if (id.endsWith(".vue")) {
+-        const { filename, query } = parseVueRequest(id);
+-        if (!excludeLangs.includes(query.lang ?? "")) {
+-          if (vuePluginOptions == null) {
+-            vuePluginOptions = getVuePluginOptions(vuePlugin);
+-          }
 -          analyzeIdentifiers(
 -            getDescriptor(filename, code, vuePluginOptions),
 -            vuePluginOptions,
 -            translationIdentifiers
 -          );
-+		  if (vuePluginOptions && vuePluginOptions.compiler) {
-+			analyzeIdentifiers(
-+			  getDescriptor(filename, code, vuePluginOptions),
-+			  vuePluginOptions,
-+			  translationIdentifiers
-+			);
-+		  }
++      },
++      async transform(code, id, options) {
++        if (id.endsWith(".vue")) {
++      	  const { filename, query } = parseVueRequest(id);
++      	  if (!excludeLangs.includes(query.lang ?? "")) {
++      	    if (vuePluginOptions == null) {
++      	  	vuePluginOptions = getVuePluginOptions(vuePlugin);
++      	    }
++      	    if (vuePluginOptions && vuePluginOptions.compiler) {
++      	  	  analyzeIdentifiers(
++      	  		getDescriptor(filename, code, vuePluginOptions),
++      	  		vuePluginOptions,
++      	  		translationIdentifiers
++      	  	  );
++      	    } else {
++				console.log('transform call without vue compiler', { id, options });
++      	    }
++      	  }
          }
++        return {
++			code,
++			map: { version: 3, mappings: "", sources: [] }
++        };
        }
-       return {
+-      return {
+-        code,
+-        map: { version: 3, mappings: "", sources: [] }
+-      };
+     }
+   };
+ }
